@@ -8,8 +8,7 @@ public class SetupController
             {
                 System.out.println("controller aded");
                 Board board = new Board(16,16);
-                board.createPieces();
-                //board.printBoard();
+                board.printBoard();
             }
             public void start()
             {
