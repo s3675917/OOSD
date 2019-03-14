@@ -1,6 +1,6 @@
 import controller.SetupController;
 import view.SetupView;
-public class main{
+public class game {
 public static void main(String[]args)throws Exception
         {
         SetupView setupView=new SetupView();
