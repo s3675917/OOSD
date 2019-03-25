@@ -1,7 +1,7 @@
 package model;
 
-public class Officer extends LawEnforcement {
-    public Officer(int x, int y)
+public class Warden extends LawEnforcement{
+    public Warden(int x, int y)
     {
         this.setPosition(x,y);
     }

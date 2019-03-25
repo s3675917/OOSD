@@ -3,6 +3,7 @@ package model;
 public abstract class Pieces
 {
     private int x,y;
+    private int pieceValue;
     //x,y are the current positions of the piece
     public void setPosition(int x,int y)
     {
@@ -17,4 +18,5 @@ public abstract class Pieces
     {
         return y;
     }
+    public int getPieceValue() { return pieceValue; }
 }

@@ -1,18 +1,18 @@
 package model;
 
-public class Officer extends LawEnforcement {
-    public Officer(int x, int y)
+public class LockSmith extends Prisoner{
+    public LockSmith(int x, int y)
     {
         this.setPosition(x,y);
     }
     @Override
     public int getPieceValue()
     {
-        return 3;
+        return 1;
     }
     @Override
     public String toString()
     {
-        return "This is Officer at " + getX() + " " + getY();
+        return "This is Locksmith at " + getX() + " " + getY();
     }
 }
