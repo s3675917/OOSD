@@ -8,6 +8,11 @@ public class Key extends Pieces
         this.setPosition(x,y);
     }
     @Override
+    public int getPieceValue()
+    {
+        return 6;
+    }
+    @Override
     public String toString()
     {
         return "This is Key at " + getX() + " " + getY();
