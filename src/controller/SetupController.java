@@ -4,6 +4,8 @@ import model.Board;
 import model.Kingpin;
 import view.SetupView;
 
+import java.awt.*;
+
 public class SetupController {
     public SetupController() {
         Board board = new Board(16, 16);
@@ -16,12 +18,12 @@ public class SetupController {
 
     }
 
-    public void update(double time) {
+    public void render(Graphics2D g) {
 
-
-            cam.update();
-        }
 
     }
+
+
+
 
 }

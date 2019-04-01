@@ -18,12 +18,14 @@ public class GamePanel extends JPanel {
     public static int height;
     private boolean running = false;
 
+    private BufferStrategy bs;
     private BufferedImage img;
     private Graphics2D g;
 
     private SetupController sc;
 
     public GamePanel(BufferStrategy bs, int width, int height) {
+        this.bs = bs;
         GamePanel.width = width;
         GamePanel.height = height;
         setPreferredSize(new Dimension(width, height));
@@ -49,7 +51,7 @@ public class GamePanel extends JPanel {
         while (running) {
 
 
-                sc.update();
+                this.render();
 
             }
 
@@ -58,9 +60,16 @@ public class GamePanel extends JPanel {
         }
 
 
-    public void update(double time) {
-        sc.update(time);
+    public void render() {
+        sc.render(g);
     }
 
-
+    public void draw(Graphics2D g) {
+        do {
+            Graphics g2 = (Graphics) bs.getDrawGraphics();
+            g2.drawImage(img, 8, 31, width, height, null);
+            g2.dispose();
+            bs.show();
+        } while (bs.contentsLost());
+    }
 }

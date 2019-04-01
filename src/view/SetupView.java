@@ -10,12 +10,15 @@ public class SetupView extends JFrame implements KeyListener {
     private GamePanel mp;
     private JFrame frame = new JFrame("UI");
     public static final long serialVersionUID = 1L;
+    private BufferStrategy bs;
 
 
 
     //The menu should show a squared board and the pieces placed on the board
     public SetupView() {
-        mp = new GamePanel();
+        createBufferStrategy(2);
+        bs = getBufferStrategy();
+        mp = new GamePanel(bs,600,600);
         frame.add(mp);
         frame.addKeyListener(this);
 
