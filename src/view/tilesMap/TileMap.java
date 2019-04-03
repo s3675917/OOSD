@@ -5,5 +5,9 @@ package view.tilesMap;/*
  * *@ver 1.0
  * */
 
-public class TileMap {
+import java.awt.*;
+
+public abstract class TileMap {
+    public abstract void render(Graphics g);
+
 }

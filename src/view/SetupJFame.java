@@ -6,29 +6,36 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferStrategy;
 
-public class SetupView extends JFrame implements KeyListener {
-    private GamePanel mp;
-    private JFrame frame = new JFrame("UI");
+public class SetupJFame extends JFrame implements KeyListener {
     public static final long serialVersionUID = 1L;
     private BufferStrategy bs;
 
 
-
     //The menu should show a squared board and the pieces placed on the board
-    public SetupView() {
-        createBufferStrategy(2);
-        bs = getBufferStrategy();
-        mp = new GamePanel(bs,600,600);
-        frame.add(mp);
-        frame.addKeyListener(this);
+    public SetupJFame() {
+        setTitle("Game");
+        setSize(1280,720);
+        add(new GamePanel(1280, 720));
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        setIgnoreRepaint(true);
+//        pack();
+        setLocationRelativeTo(null);
+        setVisible(true);
 
-        frame.setSize(600, 600);
-        frame.setLocationRelativeTo(null);
-        frame.setResizable(true);
-        frame.setVisible(true);
-
-        System.out.println("View started\n");
     }
+
+//
+//    public void addNotify() {
+//        super.addNotify();
+//
+//        createBufferStrategy(2);
+//        bs = getBufferStrategy();
+//
+//        setLayout(new BorderLayout());
+//        add(new GamePanel(bs, 1280, 720));
+//
+//    }
+
 
     @Override
     public void keyTyped(KeyEvent e) {
@@ -108,8 +115,6 @@ public class SetupView extends JFrame implements KeyListener {
 //                return;
 //        }
         //chase();
-        frame.add(mp);
-        frame.repaint();
 
     }
 
@@ -117,7 +122,6 @@ public class SetupView extends JFrame implements KeyListener {
     public void keyReleased(KeyEvent e) {
 
     }
-
 
 
 }
