@@ -1,7 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5dd14399-4557-475f-a0c1-0b5dfe4d73f6" name="Default Changelist" comment="">
+    <list default="true" id="5dd14399-4557-475f-a0c1-0b5dfe4d73f6" name="Default Changelist" comment="1 apr by Biao">
+      <change afterPath="$PROJECT_DIR$/src/res/entity/enemy/Dwarf_Sprite_Sheet1.2v.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/enemy/Minotaur - Sprite Sheet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/enemy/flaming skull design.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/enemy/goblin spritesheet calciumtrice.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/enemy/littlegirl.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/enemy/orc spritesheet calciumtrice.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/enemy/skeleton spritesheet calciumtrice.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/linkformatted.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/littlegirl.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/link.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/player_referrence.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack down_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack down_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack down_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack down_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack left_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack left_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack left_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack left_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack right_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack right_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack right_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack right_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack up_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack up_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack up_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack up_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack_Animation 1_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack_Animation 1_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack_Animation 1_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack_Animation 1_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack_Animation 1_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack_Animation 1_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack_Animation 1_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack_Animation 1_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack_Animation 1_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack_Animation 1_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like idle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like idle_Animation 1_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like idle_Animation 1_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like idle_Animation 1_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like run up_Animation 1_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like run up_Animation 1_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like run up_Animation 1_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like run up_Animation 1_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like run.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like run_Animation 1_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like run_Animation 1_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like run_Animation 1_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like run_Animation 1_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like run_Animation 1_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like run_Animation 1_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/roguelike run down_Animation 1_0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/roguelike run down_Animation 1_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/roguelike run down_Animation 1_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/roguelike run down_Animation 1_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/wizardPlayer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/workinprogress/playerformatted.pdn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/entity/workinprogress/playerformatted.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/font/ZeldaFont.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/font/cbbpv-crxg4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/font/cbiak-org1k.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/font/font.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/font/galaxyfont.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/item/The Humble Item Pack.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/tile/Wall.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/tile/Wall.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/tile/untitled.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/tile/untitled.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/ui/ui.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/ui/ui_big_pieces.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -19,8 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/SetupController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="182">
+              <caret line="20" column="20" lean-forward="true" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -29,10 +102,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/view/GamePanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/Vector2f.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+            <state relative-caret-position="285">
+              <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -87,6 +169,18 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/tilesMap/TileManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="88" column="19" lean-forward="true" selection-start-line="88" selection-start-column="19" selection-end-line="88" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/blocks/NormBlock.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
@@ -109,23 +203,6 @@
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/tilesMap/TileMapWall.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="45" column="13" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/res/tile/Wall.png">
-          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -173,12 +250,12 @@
         <option value="$PROJECT_DIR$/src/res/tile/untitled.xml" />
         <option value="$PROJECT_DIR$/src/view/Sprite.java" />
         <option value="$PROJECT_DIR$/src/view/SetupJFame.java" />
-        <option value="$PROJECT_DIR$/src/view/GamePanel.java" />
         <option value="$PROJECT_DIR$/src/view/tilesMap/TileManager.java" />
         <option value="$PROJECT_DIR$/src/view/tilesMap/TileMapWall.java" />
         <option value="$PROJECT_DIR$/src/model/Items.java" />
         <option value="$PROJECT_DIR$/src/controller/SetupController.java" />
         <option value="$PROJECT_DIR$/src/view/tilesMap/TileMapNorm.java" />
+        <option value="$PROJECT_DIR$/src/view/GamePanel.java" />
       </list>
     </option>
   </component>
@@ -278,7 +355,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554262079486" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554262500240" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -339,7 +416,7 @@
       <workItem from="1553208046896" duration="4087000" />
       <workItem from="1553290675162" duration="5406000" />
       <workItem from="1554032108617" duration="1587000" />
-      <workItem from="1554093307742" duration="42075000" />
+      <workItem from="1554093307742" duration="42488000" />
     </task>
     <task id="LOCAL-00001" summary="1 apr by Biao">
       <created>1554094366290</created>
@@ -369,17 +446,23 @@
       <option name="project" value="LOCAL" />
       <updated>1554261902127</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="1 apr by Biao">
+      <created>1554262087670</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1554262087670</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53155000" />
+    <option name="totallyTimeSpent" value="53568000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49716446" visible="true" weight="0.16165951" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49716446" visible="true" weight="0.16165951" />
       <window_info id="Structure" order="1" sideWeight="0.5028355" side_tool="true" visible="true" weight="0.16165951" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -399,7 +482,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32908162" />
-      <window_info active="true" anchor="bottom" id="Messages" order="12" visible="true" weight="0.32611465" />
+      <window_info anchor="bottom" id="Messages" order="12" visible="true" weight="0.32611465" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24926108" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -618,27 +701,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/GamePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/tilesMap/TileMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/tilesMap/TileManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="78" column="39" selection-start-line="78" selection-start-column="39" selection-end-line="78" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -707,16 +773,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/SetupController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/tilesMap/TileMapNorm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -729,8 +785,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/Vector2f.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+        <state relative-caret-position="285">
+          <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/tilesMap/TileManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="88" column="19" lean-forward="true" selection-start-line="88" selection-start-column="19" selection-end-line="88" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/SetupController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="20" column="20" lean-forward="true" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/GamePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
