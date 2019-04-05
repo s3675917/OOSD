@@ -1,64 +1,109 @@
 package view;
 
+import controller.GameControl;
+import model.DIR;
+import model.player.Player;
+
 import javax.swing.*;
-import java.awt.*;
+import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.image.BufferStrategy;
 
-public class SetupJFame extends JFrame implements KeyListener {
-    public static final long serialVersionUID = 1L;
+public class SetupJFame extends JFrame implements Runnable {
     private BufferStrategy bs;
 
-
+    public static final long serialVersionUID = 1L;
+    public GamePanel gp;
+    public Thread thread;
     //The menu should show a squared board and the pieces placed on the board
+
     public SetupJFame() {
         setTitle("Game");
-        setSize(1280,720);
-        add(new GamePanel(1280, 720));
+        setSize(1280, 720);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        setIgnoreRepaint(true);
-//        pack();
         setLocationRelativeTo(null);
+        setIgnoreRepaint(true);
         setVisible(true);
-
+        pack();
+        gp.addKeyListener(new Monitor());
     }
 
-//
-//    public void addNotify() {
-//        super.addNotify();
-//
-//        createBufferStrategy(2);
-//        bs = getBufferStrategy();
-//
-//        setLayout(new BorderLayout());
-//        add(new GamePanel(bs, 1280, 720));
-//
-//    }
+    public void addNotify() {
+        super.addNotify();
+
+        createBufferStrategy(2);
+        bs = getBufferStrategy();
+        gp = new GamePanel(bs,1280, 720);
+        add(gp);
+
+        if (thread == null) {
+            thread = new Thread(this, "GameThread");
+            thread.start();
+        }
+    }
 
 
     @Override
-    public void keyTyped(KeyEvent e) {
-
+    public void run() {
+        while (true) {
+            gp.render();
+            gp.draw();
+        }
     }
 
-    @Override
-    public void keyPressed(KeyEvent e) {
-        int x = 0;
-        switch (e.getKeyCode()) {
-            case KeyEvent.VK_DOWN:
-                x = 1;
-            case KeyEvent.VK_UP:
-                x = 2;
-            case KeyEvent.VK_RIGHT:
-                x = 3;
-            case KeyEvent.VK_LEFT:
-                x = 4;
-            case KeyEvent.VK_ESCAPE:
-                x = 5;
+
+
+    class Monitor extends KeyAdapter { // 内部类，实现KeyListener的子类KeyAdapter
+
+
+        public void keyPressed(KeyEvent e) { // 閲嶅啓瑕佸疄鐜扮殑鎸変笅鎸夐敭鐨勬柟娉�
+            DIR dir = null;
+            int count = GameControl.playerCounter;
+            Player currentPlayer = GameControl.players.get(count);
+
+            dir = getDir(e);
+            System.out.println(currentPlayer.getClass().getSimpleName() + " ");
+
+            if (dir == null) {
+                return;
+            }
+
+            try {
+                currentPlayer.move(dir);
+            } catch (Exception e1) {
+                System.err.println(e1.getMessage());
+                return;
+            }
+            System.out.println(" @ " + currentPlayer.getPos().getSeq());
+            System.out.println(currentPlayer.getPos());
+            System.out.println();
+            if (count < 5) {
+                GameControl.playerCounter=0;
+            } else {
+                GameControl.playerCounter = 0;
+            }
 
 
         }
+
+        public DIR getDir(KeyEvent e) {
+            int key = e.getKeyCode(); // 鑾峰彇鎸変笅鎸夐敭鐨勮櫄鎷熺爜(int绫诲瀷锛�
+            DIR dir = null;
+            if (key == KeyEvent.VK_UP) { // 涓庢寜閿殑铏氭嫙鐮佽繘琛屾瘮杈冿紝鏄寜涓嬪摢涓寜閿�
+                dir = DIR.up;
+            } else if (key == KeyEvent.VK_DOWN) { // 鍚戜笅绠ご
+                dir = DIR.down;
+            } else if (key == KeyEvent.VK_LEFT) {
+                dir = DIR.left;
+            } else if (key == KeyEvent.VK_RIGHT) {
+                dir = DIR.right;
+            } else {
+                System.out.print("invalid input : ");
+                return null;
+            }
+            return dir;
+        }
+    }
 
 
 //        switch (x) {
@@ -114,14 +159,8 @@ public class SetupJFame extends JFrame implements KeyListener {
 //            default:
 //                return;
 //        }
-        //chase();
-
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-
-    }
-
+    //chase();
 
 }
+
+

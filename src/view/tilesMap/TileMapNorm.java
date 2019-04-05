@@ -5,26 +5,23 @@ package view.tilesMap;/*
  * *@ver 1.0
  * */
 
-import model.Items;
-import model.blocks.NormBlock;
-import view.Sprite;
-import view.Vector2f;
-
+import model.Position;
+import model.tile.NormTiles;
+import view.utils.Sprite;
 import java.awt.*;
 
 public class TileMapNorm extends TileMap {
-    private Items[] blocks;
+    private NormTiles[] blocks;
     private int tileWidth;
     private int tileHeight;
 
     private int height;
 
     public TileMapNorm(String data, Sprite sprite, int width, int height, int tileWidth, int tileHeight, int tileColumns) {
-        blocks = new Items[width * height];
+        blocks = new NormTiles[width * height];
 
         this.tileWidth = tileWidth;
         this.tileHeight = tileHeight;
-
         this.height = height;
 
         String[] block = data.split(",");
@@ -40,16 +37,27 @@ public class TileMapNorm extends TileMap {
                 draw_location_x = (i % width) * tileWidth;
                 draw_location_y = (i / width) * tileHeight;
 
-                blocks[i] = new NormBlock(sprite.getSprite(sprite_x, sprite_y), new Vector2f(draw_location_x,draw_location_y), tileWidth, tileHeight);
+                blocks[i] = new NormTiles(sprite.getSprite(sprite_x, sprite_y), new Position(draw_location_x,draw_location_y), tileWidth, tileHeight);
             }
         }
     }
 
     public void render(Graphics g) {
-        for (int i = 0; i < blocks.length; i++) {
-            if (blocks[i] != null)
-            blocks[i].render(g);
+        for (NormTiles nt:blocks
+             ) {
+            if (nt != null){
+                nt.render(g);
+            }
 
         }
     }
+
+
+    public Position getRandomPoint(){
+        double random = Math.random() * (blocks.length-1);
+        return blocks[(int)random].getPos();
+    }
+
+
+
 }

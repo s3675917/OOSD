@@ -1,5 +1,5 @@
 package view;/*
- * *Network programming lab 2
+ * *OOSD
  * *@Date:  2019-03-22
  * *@author:  Biao Li
  * *StudentID :  s3675917
@@ -13,70 +13,69 @@ import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
-public class GamePanel extends JPanel{
+public class GamePanel extends JPanel {
 
-    public static int width;
-    public static int height;
-
-    private Thread thread;
-    private boolean running = false;
-
-    private BufferStrategy bs;
-    private BufferedImage img;
-    private Graphics g;
-
+    private int width;
+    private int height;
     private SetupController sc;
 
-    public void paintComponent(Graphics g){
-        this.g = g;
-        init();
-        render();
-        //draw();
-        System.out.println("game run");
+    BufferStrategy bs;
+
+    Image img;
+    Graphics g;
+
+//    @Override
+//    public void paintComponent(Graphics g){
+//        render(g);
+//    }
+
+//    public void update(Graphics g){
+//
+//
+//        //Create the offscreen graphics context, if no good one exists.
+//        if  (offGraphics == null){
+//            offImage = createImage(width, height);
+//        }
+//
+//        offGraphics = offImage.getGraphics();
+//        render(offGraphics);
+//
+//        g.drawImage(offImage, 0, 0, this);
+//
+//    }
 
 
-    }
 
-
-    public GamePanel(int width, int height) {
-        GamePanel.width = width;
-        GamePanel.height = height;
+    public GamePanel(BufferStrategy bs, int width, int height) {
+        this.bs = bs;
+        this.width = width;
+        this.height = height;
         setPreferredSize(new Dimension(width, height));
         setFocusable(true);
         requestFocus();
-        //run();
+        init();
     }
 
-
     private void init() {
-        running = true;
-
-        //img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
-        img = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
-//        mouse = new MouseHandler(this);
-//        key = new KeyHandler(this);
-
+        img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+        g = img.getGraphics();
         sc = new SetupController();
     }
 
-
-
-
     public void render() {
-        if (g != null) {
-            g.setColor(new Color(33, 30, 39));
-            g.fillRect(0, 0, width, height);
             sc.render(g);
-        }
+
+
     }
 
     public void draw() {
         do {
-            g.drawImage(img, 8, 31, width, height, null);
-            g.dispose();
+            Graphics g2 = bs.getDrawGraphics();
+            g2.drawImage(img, 8, 31, width, height, null);
+            g2.dispose();
             bs.show();
-        } while (bs.contentsLost());
-    }
+        } while(bs.contentsLost());
 
+    }
 
 }

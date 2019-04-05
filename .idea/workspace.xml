@@ -1,82 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5dd14399-4557-475f-a0c1-0b5dfe4d73f6" name="Default Changelist" comment="1 apr by Biao">
-      <change afterPath="$PROJECT_DIR$/src/res/entity/enemy/Dwarf_Sprite_Sheet1.2v.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/enemy/Minotaur - Sprite Sheet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/enemy/flaming skull design.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/enemy/goblin spritesheet calciumtrice.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/enemy/littlegirl.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/enemy/orc spritesheet calciumtrice.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/enemy/skeleton spritesheet calciumtrice.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/linkformatted.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/littlegirl.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/link.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/player_referrence.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack down_0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack down_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack down_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack down_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack left_0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack left_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack left_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack left_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack right_0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack right_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack right_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack right_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack up_0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack up_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack up_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack animations_attack up_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack_Animation 1_0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack_Animation 1_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack_Animation 1_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack_Animation 1_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack_Animation 1_4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack_Animation 1_5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack_Animation 1_6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack_Animation 1_7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack_Animation 1_8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like attack_Animation 1_9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like idle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like idle_Animation 1_0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like idle_Animation 1_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like idle_Animation 1_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like run up_Animation 1_0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like run up_Animation 1_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like run up_Animation 1_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like run up_Animation 1_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like run.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like run_Animation 1_0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like run_Animation 1_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like run_Animation 1_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like run_Animation 1_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like run_Animation 1_4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/rogue like run_Animation 1_5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/roguelike run down_Animation 1_0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/roguelike run down_Animation 1_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/roguelike run down_Animation 1_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/references/rogue like character/roguelike run down_Animation 1_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/wizardPlayer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/workinprogress/playerformatted.pdn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/entity/workinprogress/playerformatted.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/font/ZeldaFont.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/font/cbbpv-crxg4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/font/cbiak-org1k.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/font/font.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/font/galaxyfont.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/item/The Humble Item Pack.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/tile/Wall.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/tile/Wall.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/tile/untitled.tmx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/tile/untitled.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/ui/ui.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/ui/ui_big_pieces.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="5dd14399-4557-475f-a0c1-0b5dfe4d73f6" name="Default Changelist" comment="3 apr by Biao" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controller/SetupController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="20" column="20" lean-forward="true" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+            <state relative-caret-position="242">
+              <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -101,11 +26,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/GamePanel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
               <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/res/tile/Wall.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -127,15 +61,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/res/tile/untitled.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="90" selection-start-line="2" selection-start-column="90" selection-end-line="2" selection-end-column="90" />
             </state>
           </provider>
         </entry>
@@ -260,10 +185,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2" />
     <option name="y" value="23" />
-    <option name="width" value="1505" />
-    <option name="height" value="876" />
+    <option name="width" value="1440" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -355,11 +279,11 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554262565840" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554264843089" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -416,7 +340,7 @@
       <workItem from="1553208046896" duration="4087000" />
       <workItem from="1553290675162" duration="5406000" />
       <workItem from="1554032108617" duration="1587000" />
-      <workItem from="1554093307742" duration="42488000" />
+      <workItem from="1554093307742" duration="44226000" />
     </task>
     <task id="LOCAL-00001" summary="1 apr by Biao">
       <created>1554094366290</created>
@@ -453,14 +377,22 @@
       <option name="project" value="LOCAL" />
       <updated>1554262087670</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="3 apr by Biao">
+      <created>1554262546713</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1554262546713</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53568000" />
+    <option name="totallyTimeSpent" value="55306000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49716446" visible="true" weight="0.16165951" />
       <window_info id="Structure" order="1" sideWeight="0.5028355" side_tool="true" visible="true" weight="0.16165951" />
@@ -499,7 +431,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1 apr by Biao" />
-    <option name="LAST_COMMIT_MESSAGE" value="1 apr by Biao" />
+    <MESSAGE value="3 apr by Biao" />
+    <option name="LAST_COMMIT_MESSAGE" value="3 apr by Biao" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -660,13 +593,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/res/tile/Wall.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="26" lean-forward="true" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/javax/swing/JFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
@@ -800,20 +726,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/SetupController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="20" column="20" lean-forward="true" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/GamePanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/res/tile/Wall.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/SetupController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
