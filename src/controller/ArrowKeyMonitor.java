@@ -7,11 +7,14 @@ import model.DIR;
 import model.player.Havoc;
 import model.player.Player;
 import model.skills.SkillVisitor;
+import view.SetupJFame;
 
 public class ArrowKeyMonitor extends KeyAdapter {
+private DrawingControl drawingControl;
 
-	public ArrowKeyMonitor() {
-		// TODO Auto-generated constructor stub
+	public ArrowKeyMonitor(SetupJFame setupJFame) {
+		drawingControl = new DrawingControl();
+		drawingControl.addObserver(setupJFame);
 	}
 
 	public void keyPressed(KeyEvent e) { // 閲嶅啓瑕佸疄鐜扮殑鎸変笅鎸夐敭鐨勬柟娉�
@@ -47,6 +50,9 @@ public class ArrowKeyMonitor extends KeyAdapter {
 			} else {
 				GameControl.playerCounter = 0;
 			}
+
+			drawingControl.draw();
+
 		}else {
 			currentPlayer.setFacing(dir);
 		}
@@ -66,6 +72,8 @@ public class ArrowKeyMonitor extends KeyAdapter {
 			dir = DIR.right;
 		} else if (key == KeyEvent.VK_Q) {
 			dir = DIR.skill;
+
+
 		}else {
 			System.out.print("invalid input : ");
 			return null;

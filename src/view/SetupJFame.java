@@ -1,6 +1,7 @@
 package view;
 
 import controller.ArrowKeyMonitor;
+import controller.DrawingControl;
 import controller.GameControl;
 import model.DIR;
 import model.player.Player;
@@ -9,13 +10,15 @@ import javax.swing.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferStrategy;
+import java.util.Observable;
+import java.util.Observer;
 
-public class SetupJFame extends JFrame implements Runnable {
+public class SetupJFame extends JFrame implements Runnable, Observer {
     private BufferStrategy bs;
-    private String state;
+    private Boolean isDrawing = true;
     public static final long serialVersionUID = 1L;
-    public GamePanel gp;
-    public Thread thread;
+    private GamePanel gp;
+    private Thread thread;
     //The menu should show a squared board and the pieces placed on the board
 
     public SetupJFame() {
@@ -26,8 +29,7 @@ public class SetupJFame extends JFrame implements Runnable {
         setIgnoreRepaint(true);
         setVisible(true);
         pack();
-        gp.addKeyListener(new ArrowKeyMonitor());
-        state = "drawing";
+        gp.addKeyListener(new ArrowKeyMonitor(this));
     }
 
     public void addNotify() {
@@ -45,20 +47,24 @@ public class SetupJFame extends JFrame implements Runnable {
     }
 
 
-
     @Override
     public void run() {
         while (true) {
             long time = System.currentTimeMillis();
-            while (state.equals("drawing")) {
+            while (isDrawing) {
+                if (System.currentTimeMillis() - time >1300) isDrawing = false;
                 gp.render();
                 gp.draw();
-                if (System.currentTimeMillis() - time > 2000) state = "wait";
             }
         }
+
     }
 
 
+    @Override
+    public void update(Observable o, Object arg) {
+        isDrawing = true;
+    }
 }
 
 
