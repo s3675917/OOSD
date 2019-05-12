@@ -1,5 +1,5 @@
 package model;
 
 public enum DIR {
-up,down,left,right
+up,down,left,right,skill
 }

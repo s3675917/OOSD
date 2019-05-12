@@ -8,7 +8,6 @@ public abstract class Prisoner extends Player {
 		super(pos, name);
 	}
 
-	public abstract void useAbility();
 
 	protected boolean checkInventory() {
 		boolean x = false;
@@ -16,5 +15,11 @@ public abstract class Prisoner extends Player {
 			return true;
 		}
 		return false;
+	}
+
+
+	public void useAbility() {
+		// TODO Auto-generated method stub
+		
 	}
 }

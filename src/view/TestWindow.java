@@ -16,6 +16,7 @@ import java.util.Random;
 
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane.CloseAction;
 
+import controller.ArrowKeyMonitor;
 import controller.GameControl;
 import model.DIR;
 import model.Position;
@@ -74,22 +75,19 @@ class MyFrame extends Frame {
 
 	private static final long serialVersionUID = -3939365717764479068L;
 
-	MyFrame(String s) { // 构造方法
+	MyFrame(String s) {
 		super(s);
 	}
 
-	public void LaunchMyFrame() { // 定义一个运行窗体方法
-		// setLayout(); // 设置默认布局
+	public void LaunchMyFrame() { 
 
-		setSize(300, 333); // 设置窗体大小
+		setSize(300, 333); 
 		mc.setPreferredSize(new Dimension(250, 180));
 		//
-		this.setBackground(new Color(255, 255, 255)); // 设置窗体背景色
-		setVisible(true); // 设置窗体可见
-		// this.addKeyListener(new Monitor()); // Monitor要实现KeyListener接口(键盘监听）
+		this.setBackground(new Color(255, 255, 255)); 
+		setVisible(true); 
 		this.add(mc);
-		mc.addKeyListener(new Monitor());
-		// Graphics graphics = this.getGraphics();
+		mc.addKeyListener(new KeyMonitor());
 		this.addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
@@ -98,10 +96,13 @@ class MyFrame extends Frame {
 		});
 
 	}
+	class KeyMonitor extends KeyAdapter {
 
-	class Monitor extends KeyAdapter { // 内部类，实现KeyListener的子类KeyAdapter
+		public KeyMonitor() {
+			// TODO Auto-generated constructor stub
+		}
 
-		public void keyPressed(KeyEvent e) { // 重写要实现的按下按键的方法
+		public void keyPressed(KeyEvent e) { // 閲嶅啓瑕佸疄鐜扮殑鎸変笅鎸夐敭鐨勬柟娉�
 			DIR dir = null;
 			int count = GameControl.playerCounter;
 			Player currentPlayer = GameControl.players.get(count);
@@ -122,19 +123,20 @@ class MyFrame extends Frame {
 			System.out.println(" @ " + currentPlayer.getPos().getSeq());
 			System.out.println(currentPlayer.getPos());
 			System.out.println();
-			if (count < 5) {
-				GameControl.playerCounter++;
+			if (count < GameControl.players.size()-1) {
+				GameControl.playerCounter ++;
 			} else {
 				GameControl.playerCounter = 0;
 			}
+
 		}
 
-		public DIR getDir(KeyEvent e) {
-			int key = e.getKeyCode(); // 获取按下按键的虚拟码(int类型）
+		private DIR getDir(KeyEvent e) {
+			int key = e.getKeyCode(); // 鑾峰彇鎸変笅鎸夐敭鐨勮櫄鎷熺爜(int绫诲瀷锛�
 			DIR dir = null;
-			if (key == KeyEvent.VK_UP) { // 与按键的虚拟码进行比较，是按下哪个按键
+			if (key == KeyEvent.VK_UP) { // 涓庢寜閿殑铏氭嫙鐮佽繘琛屾瘮杈冿紝鏄寜涓嬪摢涓寜閿�
 				dir = DIR.up;
-			} else if (key == KeyEvent.VK_DOWN) { // 向下箭头
+			} else if (key == KeyEvent.VK_DOWN) { // 鍚戜笅绠ご
 				dir = DIR.down;
 			} else if (key == KeyEvent.VK_LEFT) {
 				dir = DIR.left;

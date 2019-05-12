@@ -8,25 +8,28 @@ import controller.GameControl;
 import model.DIR;
 import model.Position;
 import model.item.Item;
+import model.skills.SkillVisitor;
 import utility.util;
 import view.utils.Animation;
 import view.utils.Sprite;
 
-public class Player {
+public abstract class Player {
 
     protected Position pos;
     protected String name;
     protected ArrayList<Item> inventory = null;
     protected int FOV;
     protected Enum<PlayerStat> status;
+    protected DIR facingDir;
     private Sprite sprite;
+    private Sprite sprite1;
     private long start;
     private long now;
     private boolean walking;
     private int wh = 32;
 
-    private int offX;
-    private int offY;
+    protected int offX;
+    protected int offY;
 
     private Animation animation;
 
@@ -35,7 +38,10 @@ public class Player {
         this.name = name;
         this.FOV = 5;
         this.status = PlayerStat.normal;
+        facingDir=DIR.down;
         sprite = new Sprite("res/entity/references/player_referrence.png", wh, wh);
+        sprite1 = new Sprite("res/entity/references/arr.png",160,160);
+        
         walking = false;
         offX = 0;
         offY = 0;
@@ -71,7 +77,14 @@ public class Player {
         Position pos = new Position(x, y);
         return pos;
     }
+    
+    public void setFacing(DIR dir) {
+		facingDir=dir;
+	}
 
+    public DIR getFacing() {
+		return this.facingDir;
+	}
     public void move(DIR dir) throws Exception {
         Position nextPos = checkMove(dir);
         int posSeq = nextPos.getSeq();
@@ -147,7 +160,12 @@ public class Player {
     }
 
     public BufferedImage getStandingImage() {
-        return sprite.getSprite(0, 2, wh, wh);
+        return sprite.getSprite(0, 0, wh, wh);
+    }
+    
+    public BufferedImage getNextStandingImage() {
+    	
+        return sprite1.getSprite(0, 0);
     }
 
     public int getWh() {
@@ -169,4 +187,7 @@ public class Player {
     public int getOffY() {
         return offY;
     }
+
+	public abstract void accpet(SkillVisitor sVisitor) ;
+	
 }

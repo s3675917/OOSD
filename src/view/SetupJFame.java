@@ -1,15 +1,25 @@
 package view;
 
+import controller.ArrowKeyMonitor;
+import controller.GameControl;
+import model.DIR;
+import model.player.Player;
+
 import javax.swing.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferStrategy;
 
 public class SetupJFame extends JFrame implements Runnable {
     private BufferStrategy bs;
+
     public static final long serialVersionUID = 1L;
-    private GamePanel gp;
-    private Thread thread;
+    public GamePanel gp;
+    public Thread thread;
     //The menu should show a squared board and the pieces placed on the board
 
+
+    
     public SetupJFame() {
         setTitle("Game");
         setSize(1280, 720);
@@ -18,7 +28,7 @@ public class SetupJFame extends JFrame implements Runnable {
         setIgnoreRepaint(true);
         setVisible(true);
         pack();
-        gp.addKeyListener(new Monitor());
+        gp.addKeyListener(new ArrowKeyMonitor());
     }
 
     public void addNotify() {
@@ -26,7 +36,7 @@ public class SetupJFame extends JFrame implements Runnable {
 
         createBufferStrategy(2);
         bs = getBufferStrategy();
-        gp = new GamePanel(bs, 1280, 720);
+        gp = new GamePanel(bs,1280, 720);
         add(gp);
 
         if (thread == null) {
@@ -45,6 +55,8 @@ public class SetupJFame extends JFrame implements Runnable {
     }
 
 
-}
+
+ 
+    }
 
 

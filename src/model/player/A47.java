@@ -1,6 +1,7 @@
 package model.player;
 
 import model.Position;
+import model.skills.SkillVisitor;
 
 public class A47 extends Prisoner {
 
@@ -17,6 +18,12 @@ public class A47 extends Prisoner {
 
 	private void disguise() {
 	
+		
+	}
+
+	@Override
+	public void accpet(SkillVisitor sVisitor) {
+		// TODO Auto-generated method stub
 		
 	}
 

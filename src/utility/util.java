@@ -1,7 +1,6 @@
 package utility;
 
 import java.util.Random;
-
 import controller.GameControl;
 import model.Position;
 
@@ -33,7 +32,7 @@ public class util {
 		//s += 10000;
 		
 		//postcondition
-		assert lo < s && s< hi : ("outcome should be greater than lower bound and less than upper bound");
+		assert lo <= s && s<= hi : ("outcome should be greater than lower bound and less than upper bound");
 		
 		return s;
 	}

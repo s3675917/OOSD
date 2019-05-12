@@ -1,6 +1,7 @@
 package model.player;
 
 import model.Position;
+import model.skills.SkillVisitor;
 
 public class Havoc extends Prisoner {
 
@@ -16,6 +17,13 @@ public class Havoc extends Prisoner {
 	}
 
 	private void breakWall() {
+		
+	}
+	
+
+	@Override
+	public void accpet(SkillVisitor v) {
+		v.visitPlayer(this);
 		
 	}
 	
