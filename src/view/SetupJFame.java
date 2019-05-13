@@ -12,14 +12,12 @@ import java.awt.image.BufferStrategy;
 
 public class SetupJFame extends JFrame implements Runnable {
     private BufferStrategy bs;
-
+    private String state;
     public static final long serialVersionUID = 1L;
     public GamePanel gp;
     public Thread thread;
     //The menu should show a squared board and the pieces placed on the board
 
-
-    
     public SetupJFame() {
         setTitle("Game");
         setSize(1280, 720);
@@ -29,6 +27,7 @@ public class SetupJFame extends JFrame implements Runnable {
         setVisible(true);
         pack();
         gp.addKeyListener(new ArrowKeyMonitor());
+        state = "drawing";
     }
 
     public void addNotify() {
@@ -36,7 +35,7 @@ public class SetupJFame extends JFrame implements Runnable {
 
         createBufferStrategy(2);
         bs = getBufferStrategy();
-        gp = new GamePanel(bs,1280, 720);
+        gp = new GamePanel(bs, 1280, 720);
         add(gp);
 
         if (thread == null) {
@@ -46,17 +45,20 @@ public class SetupJFame extends JFrame implements Runnable {
     }
 
 
+
     @Override
     public void run() {
         while (true) {
-            gp.render();
-            gp.draw();
+            long time = System.currentTimeMillis();
+            while (state.equals("drawing")) {
+                gp.render();
+                gp.draw();
+                if (System.currentTimeMillis() - time > 2000) state = "wait";
+            }
         }
     }
 
 
-
- 
-    }
+}
 
 

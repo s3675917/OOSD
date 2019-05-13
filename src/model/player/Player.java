@@ -136,9 +136,6 @@ public abstract class Player {
         this.status = status;
     }
 
-    public void render(Graphics g) {
-    }
-
     public long getStart() {
         return start;
     }

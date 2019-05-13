@@ -11,10 +11,8 @@ import view.utils.Sprite;
 
 public class TileMap {
     private Tiles[] blocks;
-
     public TileMap(String data, Sprite sprite, int width, int height, int tileWidth, int tileHeight, int tileColumns) {
         blocks = new Tiles[width * height];
-
         String[] block = data.split(",");
         int sprite_x;
         int sprite_y;

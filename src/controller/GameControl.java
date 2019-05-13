@@ -12,6 +12,7 @@ import model.skills.BreakWallVisitor;
 import model.skills.PlaceTrapVisitor;
 import model.skills.SkillVisitor;
 import utility.XMLreader;
+import view.tilesMap.TileMap;
 
 public class GameControl {
 	public static int wall[]; //= { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 21, 31, 41, 51, 61, 71, 81, 91, 10, 20, 30, 40, 50,
@@ -20,7 +21,13 @@ public class GameControl {
 	public static DIR dir;
 	public static int playerCounter=0;
 	public static ArrayList<Player> players;
-	public static ArrayList<SkillVisitor> skills; 
+	public static ArrayList<SkillVisitor> skills;
+	private static ArrayList<TileMap> tileMaps;
+
+
+	public GameControl() {
+		initilize();
+	}
 
 	public static void initilize() {
 		try {
@@ -52,10 +59,18 @@ public class GameControl {
 //		players.add(w);
 		players.add(w);
 		skills.add(wsv);
-		
-		
+
+
 		playerCounter = 0;
 
+	}
+
+	public static ArrayList<TileMap> getTileMaps() {
+		return tileMaps;
+	}
+
+	public static void setTileMaps(ArrayList<TileMap> TileMaps) {
+		tileMaps = TileMaps;
 	}
 
 //	private static int[] iniWall() {

@@ -1,4 +1,3 @@
-import controller.SetupController;
 import view.SetupJFame;
 
 public class GameLauncher {

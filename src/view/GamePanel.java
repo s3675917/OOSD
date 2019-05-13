@@ -7,12 +7,11 @@ package view;/*
 				* */
 
 import controller.GameControl;
-import controller.SetupController;
 import model.Position;
 import model.player.Player;
 import model.tile.Tiles;
-import view.tilesMap.TileManager;
 import view.tilesMap.TileMap;
+import view.tilesMap.TileMapReader;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,10 +23,7 @@ public class GamePanel extends JPanel {
 
 	private int width;
 	private int height;
-	private SetupController sc;
-
 	BufferStrategy bs;
-
 	Image img;
 	Graphics g;
 
@@ -44,20 +40,19 @@ public class GamePanel extends JPanel {
 	private void init() {
 		img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
 		g = img.getGraphics();
-		sc = new SetupController();
+		new GameControl();
+		new TileMapReader("res/tile/untitled.xml");
 	}
 
 	public void render() {
 		// drawing map
-		TileManager tileManager = sc.getTm();
-		ArrayList<TileMap> tileMaps = tileManager.getTm();
+		ArrayList<TileMap> tileMaps = GameControl.getTileMaps();
 		for (TileMap tilemap : tileMaps) {
 			Tiles[] blocks = tilemap.getBlocks();
 			for (Tiles tile : blocks) {
 				if (tile != null)
 					g.drawImage(tile.getImg(), tile.getPos().getX(), tile.getPos().getY(), tile.getWidth(),
 							tile.getHeight(), null);
-
 			}
 
 		}
