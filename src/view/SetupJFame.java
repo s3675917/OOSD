@@ -13,6 +13,8 @@ import java.awt.image.BufferStrategy;
 import java.util.Observable;
 import java.util.Observer;
 
+import static java.lang.Thread.sleep;
+
 public class SetupJFame extends JFrame implements Runnable, Observer {
     private BufferStrategy bs;
     private Boolean isDrawing = true;
@@ -51,10 +53,17 @@ public class SetupJFame extends JFrame implements Runnable, Observer {
     public void run() {
         while (true) {
             long time = System.currentTimeMillis();
+            try {
+                sleep(2);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
             while (isDrawing) {
-                if (System.currentTimeMillis() - time >1300) isDrawing = false;
+                //if (System.currentTimeMillis() - time > 1300) isDrawing = false;
                 gp.render();
                 gp.draw();
+
             }
         }
 
@@ -63,7 +72,17 @@ public class SetupJFame extends JFrame implements Runnable, Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-        isDrawing = true;
+        switch (String.valueOf(arg)) {
+            case "draw":
+                isDrawing = true;
+                System.out.println("drawing");
+                break;
+
+            case "stop":
+                isDrawing = false;
+                System.out.println("stop drawing");
+                break;
+        }
     }
 }
 

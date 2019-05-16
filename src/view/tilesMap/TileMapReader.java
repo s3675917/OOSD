@@ -7,6 +7,7 @@ package view.tilesMap;
  * */
 
 import controller.GameControl;
+import controller.TileManager;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -69,8 +70,11 @@ public class TileMapReader {
                 tm.add(new TileMap(data[i], sprite, width, height, blockWidth * 2, blockHeight * 2, tileColumns));
             }
 
+            //add a tile array for storing trap
+            tm.add(new TileMap(null, sprite, width, height, blockWidth * 2, blockHeight * 2, tileColumns));
+
             //transfer map data to DAO class
-            GameControl.setTileMaps(tm);
+            TileManager.setTileMaps(tm);
 
         } catch (Exception e) {
             System.out.println("ERROR - TILEMANAGER: can not read tilemap");

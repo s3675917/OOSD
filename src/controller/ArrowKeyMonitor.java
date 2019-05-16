@@ -3,81 +3,143 @@ package controller;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+import controller.command.Command;
+import controller.command.DownKeyCommand;
+import controller.command.LeftKeyCommand;
+import controller.command.QKeyCommand;
+import controller.command.WKeyCommand;
+import controller.command.EKeyCommand;
+import controller.command.RKeyCommand;
+import controller.command.RightKeyCommand;
+import controller.command.UpKeyCommand;
 import model.DIR;
-import model.player.Havoc;
 import model.player.Player;
-import model.skills.SkillVisitor;
+import model.player.PlayerStat;
+import model.spell.BreakWallVisitor;
+import model.spell.DisguseVisitor;
+import model.spell.PickDoorVisitor;
+import model.spell.PlaceTrapVisitor;
+import model.spell.PlayerVisitor;
 import view.SetupJFame;
 
 public class ArrowKeyMonitor extends KeyAdapter {
-private DrawingControl drawingControl;
 
-	public ArrowKeyMonitor(SetupJFame setupJFame) {
-		drawingControl = new DrawingControl();
-		drawingControl.addObserver(setupJFame);
-	}
+    private Command upKeyCommand = new UpKeyCommand();
+    private Command downKeyCommand = new DownKeyCommand();
+    private Command leftKeyCommand = new LeftKeyCommand();
+    private Command rightKeyCommand = new RightKeyCommand();
+    private Command QKeyCommand = new QKeyCommand();
+    private Command WKeyCommand = new WKeyCommand();
+    private Command EKeyCommand = new EKeyCommand();
+    private Command RKeyCommand = new RKeyCommand();
+    private PlayerVisitor pickDoor = new PickDoorVisitor();
+    private PlayerVisitor breakWall = new BreakWallVisitor();
+    private PlayerVisitor disguse = new DisguseVisitor();
+    private PlayerVisitor placeTrap = new PlaceTrapVisitor();
+    private DrawingControl drawingControl;
 
-	public void keyPressed(KeyEvent e) { // 閲嶅啓瑕佸疄鐜扮殑鎸変笅鎸夐敭鐨勬柟娉�
-		DIR dir = null;
-		int count = GameControl.playerCounter;
-		Player currentPlayer = GameControl.players.get(count);
+    public ArrowKeyMonitor(SetupJFame setupJFame) {
+        drawingControl = new DrawingControl();
+        drawingControl.addObserver(setupJFame);
+        drawingControl.drawSuddenlyChange();
+    }
 
-		SkillVisitor sVisitor = GameControl.skills.get(count);
-
-		dir = getDir(e);
-		System.out.println(currentPlayer.getClass().getSimpleName() + " ");
-		//mc.repaint();
-		if (dir == null) {
-			return;
-		}
-		if (dir == DIR.skill) {
-			currentPlayer.accpet(sVisitor);
-			return;
-		}
-		
-		if (dir==currentPlayer.getFacing()) {
-			try {
-				currentPlayer.move(dir);
-			} catch (Exception e1) {
-				System.err.println(e1.getMessage());
-				return;
-			}
-			System.out.println(" @ " + currentPlayer.getPos().getSeq());
-			System.out.println(currentPlayer.getPos());
-			System.out.println();
-			if (count < GameControl.players.size()-1) {
-				GameControl.playerCounter ++;
-			} else {
-				GameControl.playerCounter = 0;
-			}
-
-			drawingControl.draw();
-
-		}else {
-			currentPlayer.setFacing(dir);
-		}
-		
-	}
-
-	private DIR getDir(KeyEvent e) {
-		int key = e.getKeyCode(); // 鑾峰彇鎸変笅鎸夐敭鐨勮櫄鎷熺爜(int绫诲瀷锛�
-		DIR dir = null;
-		if (key == KeyEvent.VK_UP) { // 涓庢寜閿殑铏氭嫙鐮佽繘琛屾瘮杈冿紝鏄寜涓嬪摢涓寜閿�
-			dir = DIR.up;
-		} else if (key == KeyEvent.VK_DOWN) { // 鍚戜笅绠ご
-			dir = DIR.down;
-		} else if (key == KeyEvent.VK_LEFT) {
-			dir = DIR.left;
-		} else if (key == KeyEvent.VK_RIGHT) {
-			dir = DIR.right;
-		} else if (key == KeyEvent.VK_Q) {
-			dir = DIR.skill;
+    @Override
+    public void keyPressed(KeyEvent e) {
+        int count = GameControl.playerCounter;
+        Player currentPlayer = GameControl.players.get(count);
+        // SkillVisitor sVisitor = GameControl.skills.get(count);
 
 
-		}else {
-			System.out.print("invalid input : ");
-			return null;
-		}
-		return dir;
-	}
+        if (currentPlayer.getStatus() == PlayerStat.normal || currentPlayer.getStatus() == PlayerStat.invincible) {
+
+            // ==================cast spell==================
+            int keyCode = e.getKeyCode();
+            if (keyCode >= KeyEvent.VK_A && keyCode <= KeyEvent.VK_Z) {
+                castSkill(currentPlayer, keyCode);
+                drawingControl.drawMoving();
+                return;
+            }
+            // ==============================================
+
+            // ==================move==================
+            movement(currentPlayer, e);
+            // ========================================
+        } else {
+            GameControl.playerCounter++; // if the player is immobilized, next player
+        }
+
+    }
+
+    private DIR getDir(KeyEvent e) {
+        int key = e.getKeyCode();
+        DIR dir = null;
+        switch (key) {
+            case KeyEvent.VK_UP:
+                dir = DIR.up;
+                break;
+            case KeyEvent.VK_DOWN:
+                dir = DIR.down;
+                break;
+            case KeyEvent.VK_LEFT:
+                dir = DIR.left;
+                break;
+            case KeyEvent.VK_RIGHT:
+                dir = DIR.right;
+                break;
+            default:
+                break;
+        }
+
+        return dir;
+    }
+
+    private void castSkill(Player currentPlayer, int keyCode) {
+
+        switch (keyCode) {
+            case KeyEvent.VK_Q:
+                QKeyCommand.execute(currentPlayer, breakWall);
+                return;
+            case KeyEvent.VK_W:
+                WKeyCommand.execute(currentPlayer, placeTrap);
+                return;
+            case KeyEvent.VK_E:
+                EKeyCommand.execute(currentPlayer, pickDoor);
+                return;
+            case KeyEvent.VK_R:
+                RKeyCommand.execute(currentPlayer, disguse);
+                return;
+            default:
+                return;
+        }
+
+    }
+
+    private void movement(Player currentPlayer, KeyEvent e) {
+        DIR dir = getDir(e);
+        if (dir == currentPlayer.getFacing()) {
+            switch (dir) {
+                case up:
+                    upKeyCommand.execute(currentPlayer);
+                    break;
+                case down:
+                    downKeyCommand.execute(currentPlayer);
+                    break;
+                case left:
+                    leftKeyCommand.execute(currentPlayer);
+                    break;
+                case right:
+                    rightKeyCommand.execute(currentPlayer);
+                    break;
+                default:
+                    return;
+            }
+
+            drawingControl.drawMoving();
+
+        } else {
+            currentPlayer.setFacing(dir);
+            drawingControl.drawSuddenlyChange();
+        }
+    }
 }

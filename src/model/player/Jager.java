@@ -1,23 +1,22 @@
 package model.player;
 
 import model.Position;
-import model.skills.SkillVisitor;
+import model.spell.PlayerVisitor;
 
 public class Jager extends Prisoner {
 
 	public Jager(Position pos, String name) {
 		super(pos, name);
 		// TODO Auto-generated constructor stub
-		super.offX=4;
-		super.offY=3;
-		System.out.println(super.offX+" "+super.offY);
+//		super.offX=4;
+//		super.offY=3;
+//		System.out.println(super.offX+" "+super.offY);
+		hasSpell1=false;
+		hasSpell2=true;
+		hasSpell3=false;
+		hasSpell4=false;
 	}
 
-	@Override
-	public void useAbility() {
-		placeTrap();
-
-	}
 
 	private void placeTrap() {
 		
@@ -25,8 +24,8 @@ public class Jager extends Prisoner {
 	}
 
 	@Override
-	public void accpet(SkillVisitor v) {
-		v.visitPlayer(this);
+	public void accpet(PlayerVisitor v) {
+		v.visit(this);
 		
 	}
 

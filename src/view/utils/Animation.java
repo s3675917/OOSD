@@ -1,8 +1,12 @@
 package view.utils;
 
+import model.Position;
+
 public class Animation {
     private int direction;
     private int num;
+    private Position pos;
+
 
     public Animation(int direction,int num) {
         this.direction = direction;
@@ -28,5 +32,14 @@ public class Animation {
 
     public int getNum() {
         return num;
+    }
+
+    public Position getOldPos() {
+        return pos;
+    }
+
+    public void setOldPos(Position pos) {
+        this.pos = pos;
+
     }
 }

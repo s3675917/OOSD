@@ -10,7 +10,4 @@ public abstract class LawEnforcer extends Player {
 	}
 	
 
-	public void arrest(Prisoner player) {
-		// do something
-	}
 }

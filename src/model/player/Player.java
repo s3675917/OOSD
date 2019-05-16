@@ -4,15 +4,22 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-import controller.GameControl;
+import controller.TileManager;
+import controller.state.ErrorState;
 import model.DIR;
 import model.Position;
 import model.item.Item;
-import model.skills.SkillVisitor;
+import model.spell.PlayerVisitor;
 import utility.util;
 import view.utils.Animation;
 import view.utils.Sprite;
 
+/*
+ *
+ * FOV is the number of the block this player can see
+ * facingDir is which side this player is facing now
+ * start is the time when player starts moving in the view
+ * */
 public abstract class Player {
 
     protected Position pos;
@@ -21,15 +28,12 @@ public abstract class Player {
     protected int FOV;
     protected Enum<PlayerStat> status;
     protected DIR facingDir;
+    protected int stamina;
     private Sprite sprite;
     private Sprite sprite1;
     private long start;
-    private long now;
     private boolean walking;
     private int wh = 32;
-
-    protected int offX;
-    protected int offY;
 
     private Animation animation;
 
@@ -38,13 +42,16 @@ public abstract class Player {
         this.name = name;
         this.FOV = 5;
         this.status = PlayerStat.normal;
-        facingDir=DIR.down;
+        facingDir = DIR.down;
         sprite = new Sprite("res/entity/references/player_referrence.png", wh, wh);
-        sprite1 = new Sprite("res/entity/references/arr.png",160,160);
-        
+        sprite1 = new Sprite("res/entity/references/arr.png", 32, 32);
+        stamina = 3;
+
+        /*
+         * offX and offY are player animation movement beats
+         *
+         * */
         walking = false;
-        offX = 0;
-        offY = 0;
         animation = new Animation(0, 0);
 
     }
@@ -52,49 +59,88 @@ public abstract class Player {
     public Position checkMove(DIR dir) {
         int x = this.pos.getX();
         int y = this.pos.getY();
+        animation.setOldPos(pos);
         switch (dir) {
             case up:
                 y--;
-                offY++;
                 animation.setDirection(3);
                 break;
             case down:
                 y++;
-                offY--;
                 animation.setDirection(0);
                 break;
             case left:
                 x--;
-                offX++;
                 animation.setDirection(1);
                 break;
             case right:
                 x++;
-                offX--;
                 animation.setDirection(2);
                 break;
         }
         Position pos = new Position(x, y);
         return pos;
     }
-    
-    public void setFacing(DIR dir) {
-		facingDir=dir;
-	}
 
-    public DIR getFacing() {
-		return this.facingDir;
-	}
     public void move(DIR dir) throws Exception {
         Position nextPos = checkMove(dir);
-        int posSeq = nextPos.getSeq();
-        if (!util.findEle(GameControl.wall, posSeq)) {
+        if (!TileManager.wallAhead(nextPos)) {
             setPos(nextPos);
             walking = true;
             start = System.currentTimeMillis();
         } else {
-            throw new Exception("wall ahead");
+            ErrorState.setErrorMessage("wall ahead");
+            throw new Exception();
         }
+    }
+
+    public void setFacing(DIR dir) {
+        int direction = 0;
+        if (dir != null) {
+            switch (dir) {
+                case down:
+                    direction = 0;
+                    break;
+                case up:
+                    direction = 3;
+                    break;
+                case left:
+                    direction = 1;
+                    break;
+                case right:
+                    direction = 2;
+                    break;
+            }
+            animation.setDirection(direction);
+            facingDir = dir;
+        }
+    }
+
+    public DIR getFacing() {
+        return this.facingDir;
+    }
+
+
+    public Position getNextXPosition(int X) {
+        int x = this.getPos().getX();
+        int y = this.getPos().getY();
+        DIR dir = this.getFacing();
+        Position targetPositions = null;
+        switch (dir) {
+            case up:
+                targetPositions = new Position(x, y - X);
+                break;
+            case down:
+                targetPositions = new Position(x, y + X);
+                break;
+            case left:
+                targetPositions = new Position(x - X, y);
+                break;
+            case right:
+                targetPositions = new Position(x + X, y);
+                break;
+        }
+        return targetPositions;
     }
 
     public Position getPos() {
@@ -103,6 +149,27 @@ public abstract class Player {
 
     public void setPos(Position pos) {
         this.pos = pos;
+    }
+
+    public int getStamina() {
+        return stamina;
+    }
+
+    public void setStamina(int stamina) {
+        this.stamina = stamina;
+    }
+
+    public void deductStamina(int requiredStamina) {
+        this.stamina = this.stamina - stamina;
+    }
+
+    public boolean checkStamina(int requiredStamina) {
+        if (this.getStamina() < requiredStamina) {
+            ErrorState.setErrorMessage("cant cast spell due to low stamina");
+            return false;
+        } else {
+            return true;
+        }
     }
 
     public String getName() {
@@ -119,12 +186,12 @@ public abstract class Player {
 
     /**
      * Set the player's field of view
-     * @Precondition FOV must greater than 0
+     *
      * @param FOV field of view
-     * 
+     * @Precondition FOV must greater than 0
      */
     public void setFOV(int FOV) {
-    	assert FOV > 0 : ("FOV must greater than 0");
+        assert FOV > 0 : ("FOV must greater than 0");
         this.FOV = FOV;
     }
 
@@ -134,6 +201,9 @@ public abstract class Player {
 
     public void setStatus(Enum<PlayerStat> status) {
         this.status = status;
+    }
+
+    public void render(Graphics g) {
     }
 
     public long getStart() {
@@ -157,11 +227,14 @@ public abstract class Player {
     }
 
     public BufferedImage getStandingImage() {
-        return sprite.getSprite(0, 0, wh, wh);
+        if (this.status == PlayerStat.arrested) {
+            return sprite.getSprite(7, 0, wh, wh);
+        } else
+            return sprite.getSprite(0, animation.getDirection(), wh, wh);
     }
-    
+
     public BufferedImage getNextStandingImage() {
-    	
+
         return sprite1.getSprite(0, 0);
     }
 
@@ -169,22 +242,10 @@ public abstract class Player {
         return wh;
     }
 
-    public void setOffX(int offX) {
-        this.offX = offX;
-    }
+    public abstract void accpet(PlayerVisitor sVisitor);
 
-    public void setOffY(int offY) {
-        this.offY = offY;
-    }
 
-    public int getOffX() {
-        return offX;
+    public Position getOldPos() {
+        return animation.getOldPos();
     }
-
-    public int getOffY() {
-        return offY;
-    }
-
-	public abstract void accpet(SkillVisitor sVisitor) ;
-	
 }

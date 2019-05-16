@@ -1,7 +1,7 @@
 package model.player;
 
 import model.Position;
-import model.skills.SkillVisitor;
+import model.spell.PlayerVisitor;
 
 public class Warden extends LawEnforcer {
 
@@ -12,8 +12,8 @@ public class Warden extends LawEnforcer {
 	}
 
 	@Override
-	public void accpet(SkillVisitor v) {
-		v.visitPlayer(this);
+	public void accpet(PlayerVisitor v) {
+		v.visit(this);
 	}
 
 }

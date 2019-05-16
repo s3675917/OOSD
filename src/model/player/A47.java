@@ -1,28 +1,20 @@
 package model.player;
 
 import model.Position;
-import model.skills.SkillVisitor;
+import model.spell.PlayerVisitor;
 
 public class A47 extends Prisoner {
 
 	public A47(Position pos, String name) {
 		super(pos, name);
-		// TODO Auto-generated constructor stub
+		hasSpell1=false;
+		hasSpell2=false;
+		hasSpell3=false;
+		hasSpell4=true;
 	}
 
 	@Override
-	public void useAbility() {
-		disguise();
-
-	}
-
-	private void disguise() {
-	
-		
-	}
-
-	@Override
-	public void accpet(SkillVisitor sVisitor) {
+	public void accpet(PlayerVisitor sVisitor) {
 		// TODO Auto-generated method stub
 		
 	}

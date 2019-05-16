@@ -8,8 +8,16 @@ import model.Position;
 public class Tiles {
     private int w;
     private int h;
-    private BufferedImage img;
+    protected BufferedImage img;
     private Position pos;
+
+    public void setW(int w) {
+        this.w = w;
+    }
+
+    public void setH(int h) {
+        this.h = h;
+    }
 
     public Tiles(BufferedImage img, Position pos, int w, int h) {
         this.img = img;
@@ -29,6 +37,8 @@ public class Tiles {
     public BufferedImage getImg() {
         return img;
     }
+
+    public void setImg(BufferedImage img){this.img = img;}
 
     public Position getPos() {
         return pos;

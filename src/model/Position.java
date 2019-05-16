@@ -11,6 +11,15 @@ public class Position {
 		this.y = y;
 	}
 
+	public boolean equals(Position pos) {
+		if (this.getX()==pos.getX()&&this.getY()==pos.getY()) {
+			return true;
+		}else {
+			return false;
+		}
+
+	}
+
 	@Override
 	public String toString() {
 		return "x: " + x + " y: " + y;
@@ -20,16 +29,13 @@ public class Position {
 	 * @return sequence of the position in game board
 	 */
 	public int getSeq() {
-		
+
 		int gz = GameControl.gameSize;
-		
-		int seq = gz * y + x + 1;
-		
-		
+
+		int seq = gz * y + x;
+
 		return seq;
 	}
-
-	
 
 	public int getX() {
 		return x;

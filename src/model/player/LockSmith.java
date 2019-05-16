@@ -1,26 +1,22 @@
 package model.player;
 
 import model.Position;
-import model.skills.SkillVisitor;
+import model.spell.PlayerVisitor;
 
 public class LockSmith extends Prisoner {
 
 	public LockSmith(Position pos, String name) {
 		super(pos, name);
+		hasSpell1=false;
+		hasSpell2=false;
+		hasSpell3=true;
+		hasSpell4=false;
 	}
 
-	@Override
-	public void useAbility() {
-		pickLock();
-		
-	}
 	
-	private void pickLock() {
-		
-	}
 
 	@Override
-	public void accpet(SkillVisitor sVisitor) {
+	public void accpet(PlayerVisitor sVisitor) {
 		// TODO Auto-generated method stub
 		
 	}
